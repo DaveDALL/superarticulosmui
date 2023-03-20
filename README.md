@@ -9,7 +9,7 @@
 
 ### Muestra de funcionamiento de la SPA:
 
-    ![SPA e-commerce SuperAriculos](/public/images/SuperArticulos.gif)
+![SPA e-commerce SuperAriculos](/public/images/SuperArticulos.gif)
 
 
 ### Descripción:
