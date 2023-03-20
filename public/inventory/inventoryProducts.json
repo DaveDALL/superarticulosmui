@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1001,
+        "categoryid":"smartwatch",
+        "name": "Reloj inteligente de 1.72 pulg. IP68",
+        "brand": "Salandens",
+        "imageurl":"https://m.media-amazon.com/images/I/51urWDH94tL._AC_SL1200_.jpg",
+        "shortdescription":"Reloj inteligente IP68 para dama o caballero",
+        "longdescription":"Reloj inteligente IP68 con medición de presión, monitor de calorías, Sueño,Podómetro,Relojes Deportes GPS Monitor de Pasos,Notificaciones Inteligentes, Banda Inteligente. Compatible con IOS y Android",
+        "price": 599,
+        "stock": 10
+    },
+    {
+        "id": 1002,
+        "categoryid":"smartwatch",
+        "name": "Reloj inteligente de 1.8 pulg.",
+        "brand": "Realme",
+        "imageurl":"https://m.media-amazon.com/images/I/61FLeHcCWDL._AC_SL1183_.jpg",
+        "shortdescription":"Reloj inteligente Realme Watch 3",
+        "longdescription":"Reloj inteligente Realme Watch 3 IP68 para contestar a Las Llamadas, Pantalla de 1.8 pulg., 110 Modos de Fitness para Android iOS",
+        "price": 1299,
+        "stock": 5
+    },
+    {
+        "id": 1003,
+        "categoryid":"smartwatch",
+        "name": "Reloj Inteligente Amazfit BipU",
+        "brand": "Amazfit",
+        "imageurl":"https://m.media-amazon.com/images/I/61qu--KcnXL._AC_SL1500_.jpg",
+        "shortdescription":"Reloj Inteligente Amazfit Bip Ucon Autonomía de 9 días",
+        "longdescription":"Reloj Inteligente Amazfit Bip Ucon Autonomía de 9 días, Pantalla LCD de 1.43 pulg., más de 60 modos deportivos. Es sumergible 5 ATM y registra tus actividades mientras nadas. Sin GPS integrado. El sensor BioTracker 2 PPG monitorea tu salud 24/7, obtén datos sobre la frecuencia cardiaca o el nivel de oxígeno en la sangre",
+        "price": 749,
+        "stock": 15
+    },
+    {
+        "id": 2001,
+        "categoryid":"zurdos",
+        "name": "Tijera para zurdos",
+        "brand": "Fiskars",
+        "imageurl":"https://m.media-amazon.com/images/I/71L08d9LI4L._AC_SL1500_.jpg",
+        "shortdescription":"Tijera para zurdos, de 7 pulg.",
+        "longdescription":"Tujera ideal para personas zurdas, color rojo, de 7 pulg., para un corte fácil y eficaz. Cuchillas de acero inoxidable de alta calidad y precisión, con mango contorneado y ergonómico",
+        "price": 297,
+        "stock": 20
+    },
+    {
+        "id": 2002,
+        "categoryid":"zurdos",
+        "name": "Cuadero para zurdos",
+        "brand": "Generico",
+        "imageurl":"https://m.media-amazon.com/images/I/61Yednx+VIL.jpg",
+        "shortdescription":"Cuaderno para zurdos",
+        "longdescription":"Cuaderno de escritura de 120 páginas con líneas inclinadas para zurdos, Cuaderno multipropósito, para estudiantes, para tomar notas, con un espaciado de 8mm",
+        "price": 185,
+        "stock": 7
+    },
+    {
+        "id": 2003,
+        "categoryid":"zurdos",
+        "name": "Mouse inalámbrico Logitech",
+        "brand": "Logitech",
+        "imageurl":"https://m.media-amazon.com/images/I/71VIE8jrBmL._AC_SL1500_.jpg",
+        "shortdescription":"M650 L Mouse Inalámbrico - para Zurdos",
+        "longdescription":"Logitech Signature M650 L Mouse Inalámbrico - para Zurdos, 2 años de batería, Clicks silenciosos, Botones Laterales, Bluetooth, Scroll inteligente  rápido para las páginas largas",
+        "price": 760,
+        "stock": 7
+    },
+    {
+        "id": 3001,
+        "categoryid":"bocinai",
+        "name": "Bocina inteligente con reloj y Alexa",
+        "brand": "Echo Dot",
+        "imageurl":"https://m.media-amazon.com/images/I/61iylnC8G9L._AC_SL1000_.jpg",
+        "shortdescription":" Echo Dot con reloj (5ta generación, modelo 2022)",
+        "longdescription":" Echo Dot con reloj (5ta generación, modelo 2022), con reloj y Alexa, color azul, con una experiencia de audio superior a los Echo Dot anteriores. El indicador LED mejorado muestra el clima, títulos de canciones y más. Pídele a Alexa que muestre el clima y títulos de canciones, que ponga timers, que responda tus preguntas e incluso que te cuente un chiste",
+        "price": 1549,
+        "stock": 8
+    },
+    {
+        "id": 3002,
+        "categoryid":"bocinai",
+        "name": "Bocina Inteligente Smart Speaker",
+        "brand": "Xiaomi",
+        "imageurl":"https://m.media-amazon.com/images/I/41JKiHYvtnL._AC_SL1000_.jpg",
+        "shortdescription":"Xiaomi Bocina Inteligente Smart Speaker (IR Control)",
+        "longdescription":"Xiaomi Bocina Inteligente Smart Speaker (IR Control), color negro, Audio de alta resolución, puede usar diferentes comandos de voz para controlar el altavoz inteligente, Para reproducir música, conocer el clima, estar atento a las últimas noticias o subir/bajar el volumen, todo lo que necesita decir es ''Ok Google''",
+        "price": 1089,
+        "stock": 10
+    },
+    {
+        "id": 3003,
+        "categoryid":"bocinai",
+        "name": "Sonos One Generación 2",
+        "brand": "Sonos",
+        "imageurl":"https://m.media-amazon.com/images/I/81osaADHwSL._AC_SL1340_.jpg",
+        "shortdescription":"Sonos One Generación 2 – Poderosa bocina inalámbrica e inteligente",
+        "longdescription":"Sonos One Generación 2 – Poderosa bocina inalámbrica e inteligente, controlada por voz con Amazon Alexa y Asistente de Google, Amazon Alexa ya viene integrado para que puedas poner música, consultar noticias, establecer alarmas, recibir respuestas a tus preguntas y mucho más, gracias a Trueplay Sonos One adapta el sonido a la acústica específica del espacio para tener la mejor experiencia de teatro en casa",
+        "price": 4999,
+        "stock": 12
+    }
+]
