@@ -17,7 +17,7 @@ const CustomerForm = () => {
     const [mailValidation, setMailValidation] = useState(null)
     const [otherDataValidation, setOtherDataValidation] = useState(null)
     const [orderedItems, setOrderedItems] = useState([])
-    const {cart, setCart, calculateCartTotal} = useContext(CartContext)
+    const {cart, setCart, calculateCartTotal, clearFullCart} = useContext(CartContext)
     const totalCartItems = calculateCartTotal()
 
     useEffect(() => {
@@ -143,9 +143,7 @@ const CustomerForm = () => {
               variant='contained'
               size='large'
               sx={{alignSelf:'center', backgroundColor: "#F15025"}}
-              onClick={() => {
-                localStorage.clear()
-                setCart([])}}
+              onClick={() => clearFullCart()}
             >DE ACUERDO</Button>
           ) : (
             <Button variant='contained' size='large' disabled sx={{alignSelf:'center'}}>DE ACUERDO</Button>)}  

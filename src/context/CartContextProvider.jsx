@@ -70,6 +70,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const clearFullCart = () => {
+        localStorage.clear()
         setCart([])
     }
 

@@ -9,8 +9,13 @@
 
 ### Muestra de funcionamiento de la SPA:
 
+Funcionamiento incial:
+
 ![SPA e-commerce SuperAriculos](/public/images/SuperArticulos.gif)
 
+Funcionamiento con la integracion del carrito y de la orden de compra:
+
+![SPA e-commerce SuperArticulos Final](/public/images/SuperArticulosLast.gif)
 
 ### Descripción:
 
@@ -61,5 +66,63 @@
     * Routing: Esta funcionabilidad se integra a React mediante la instalacion de react route dom, para colocar las rutas virtuales en App.jsx, a través de BrowserRuter, Routes y Route. En los componentes se integra Link se realiza la integración hacia el ruteo de los componentes y el paso de valores de ID y CATEGORYID para el rendering de la tarjetas de productos.
 
     * Uso de Parametros: A través de la integración anterior de react route dom, se agrega la característica de usePArams(), y mediante esta funcionabilidad, se hace el envío de ID y CATEGORYID hacia los componentes de ProductDetail y Catalog respectivamente y establecer los parametros de filtrado.
+
+    En la tercera etapa y última, se realiza la intergración de los siguientes componentes que daran la posibilidad de intregrar el carrito de compra, introducción de datos de compradory generación d orden de compra:
+
+    3. Componentes:
+    
+    * CartContextProvider: Alojado en la carpeta de context bajo components, para agregar contexto, donde realizan procesos lógicos, se podrá enviar variables y funciones que otros componentes no relacionados podran usar.
+
+    * Cart: Donde se despliegan los productos agregados al carrito, atraves del componente CardItemsCartendering, y se intregra el formulario de datos del comprador, e proporcional orden de compra al finalizar la transaccion.
+
+    * CarItemsCartRendring: A traves de este componente de realiza el render de las tarjetas de productos del carrito, donde se muestra una imagen del producto, el nombre, el precio, la cantidad adquirida y el subtotal de caa producto; asi mismo se adiciona un boton para poder eliminar productos que no se desean.
+
+    * CustomerForm: Formulario donde se llenan los datos del cliente: nombre, apellido, teléfono, email; con validación de correo electrónico, mediante un campo donde se solicita volver a escribir el correo y realizando la verificación. En este componente se integra un botón para realizar la compra una vez que todos los campos esten llenos, de lo contrario no se activará el botón de compra. Se integra la recepción de la orden de compra y el formateo de objeto order que representa el registro de compra con la información del comprador (nombre, apellido, telófono y email), datos del los productos comprados (id, nombre, precio, cantidad u subtotal), el total de la compra y el time stamp del servidor n la fecha y hora de la transacción
+
+    * Loader: Se integra un loader con renderizado condicional, en los componentes de Home, ItemListContainer e ItemDetailContainer
+
+    4. Funcionabilidad.
+    
+    Para dar continuidad la funcionabilidad de la SPA, se inetgra las siguientes funciones:
+
+    * Se elimina el mock del archivo local json, y se realiaa la integración de la base de datos no relacional, Google Firebase en los componentes de Home, ItemListContainer e ItemDetailContainer, a través de los procedimientos indicados dentro de la documentación de firebase:
+
+        https://cloud.google.com/firestore/docs/manage-data/add-data?hl=es-419
+
+    * Mediante el uso de context, se incluye la lógica para realizar las siguientes funciones:
+        - Incrementar cantidad de productos sin superar el stock
+        - Decrementar cantidad de productos sin bajar de uno
+        - Reset a cero cantidad del producto
+        - Agregar item al carrito
+        - Eliminar item del carrito
+        - Calcular la cantidad de items en el carrito
+        - Calular el monto total de la compra
+        - Persisntencia del carrio en el local Storage en caso de que se refresque la pagina
+        - Eliminación total del carrito de compras 
+        - Eliminación de la registro del carrito del Local Storage
+    
+    * A traves del formulario de datos del comprador, además de ingresar los datos correspondientes de comprador: nombre, apellido, teléfono u email. Se realizan las funciones de:
+        - Creación del objeto de la orden compra que contiene información del comprador (nombre, apellido, teléfono, email), información de los productos comprados (id, nombre, precio, cantidad y subtotal), total, fecha y hora de compra.
+        - Conexión con firebase para el rgistro de la compra y generación de ID como proeba de compra y que se peude emplear como orden de compra.
+        - Verificación de llenado de todos los campos
+        - Verificación de coincidencia del email mediante un segundo campo
+        - Activación de botón de compra déspues de la validación
+        - Vvisualización de la orden de compra
+    
+    * Por otro lado se integra un boton de entendido, donde dará posibilidad al comprador de copiar o tomar captura de la orden de compra; una vez presionado el botón se borar el Local Storage y el carrito se dejara en blanco, llevando a la indicaciónd e carrito vacio.
+
+    * La indicación del carrito vacio, nos indicara que el carrito esta vacio, y nos dará la opción de ir a comprar productos.
+
+    * En el widget del carrito de obtiene la cantidad de productos a través del uso de context, donde realiza el cáculo.
+
+    * Se puede acceder al carrito de compra, ya sea a través del widget o mediante el botón de finalizar compra que tiene cada producto en el detalle, donde se peude incrementar la cantidad o decrementa. El botón de finalizar compra se activa una vez que se hay agregado prducto al carrito.
+
+### Seguimeinto de Proyecto
+
+    * Integración del un sistema de control de invetario para cerrar el ciclo de compra, y poder agregar mas procucto, y hacer validadciones de cambios de precios
+
+    * Integración de Autenticación e inicio de sesión de usuario registrado, registro de usuario nuevo, validación de datos como correo electronico y número teléfonico, a través de el envio de un correo de validación y un SMS para validar el teléfono.
+
+    * Inetgración de un sistema de pagos.
 
 ### Fin
