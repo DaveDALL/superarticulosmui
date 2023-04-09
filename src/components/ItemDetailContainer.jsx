@@ -2,24 +2,25 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import ProductDetail from './ProductDetail'
+import Loader from './loader'
 
 const ItemDetailContainer = () => {
 
-    const [products, setProducts] = useState([""])
+    const [loading, setLoading] = useState(false)
+    const [products, setProducts] = useState([])
     const {id} = useParams()
-    const fetchingData = () => {
-        fetch('/inventory/inventoryProducts.json')
-        .then(resp => {
-            return resp.json()
-        })
-        .then(data => {
-            setProducts(data)
-        }).catch()
-    }
+
     useEffect(() => {
-        fetchingData()
-    },[])
+        setLoading(true)
+        const db = getFirestore()
+        const productCollects = collection(db, "superarticulosDB")
+        getDocs(productCollects).then(snapshot => {
+            setProducts(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
+          setLoading(false)
+        })
+      }, [])
 
     const idFilter = products.filter(product => product.id == id)
 
@@ -29,7 +30,7 @@ const ItemDetailContainer = () => {
             <Grid container>
                 <Grid item sm={0} md={2}/>
                 <Grid item sm={12} md={8}>
-                    {id ? <ProductDetail products={idFilter} /> : <ProductDetail products={products} />}
+                    {loading ? <Loader /> : (id ? <ProductDetail products={idFilter} /> : <ProductDetail products={products} />)}
                 </Grid>
                 <Grid item sm={0} md={2}/>
             </Grid>

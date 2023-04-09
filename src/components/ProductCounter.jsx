@@ -5,13 +5,15 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import {useState} from 'react'
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContextProvider'
 
-const ProductCounter = props => {
+const ProductCounter = ({id, name, imageurl, price, stock}) => {
 
-    const {id, name, price, stock} = props
-    const [quatity, setQuatity] = useState(1)
+    const {quantity, addQuantity, substractQuantity, resetQuantity, addItemToCart, calculateItemsInCart} = useContext(CartContext)
+    const item = {id, name, imageurl, price, stock}
+    const itemsInCart = calculateItemsInCart()
 
     return (
         <Card sx={{ maxWidth:700 }}>
@@ -22,13 +24,13 @@ const ProductCounter = props => {
                     sx={{backgroundColor: "#F15025"}}
                     variant="contained"
                     size="body1"
-                    onClick={() => ((quatity>=stock) ? console.log("No hay existencias") : setQuatity(quatity+1))}>
+                    onClick={() => addQuantity(stock, id)}>
                         MAS
                 </Button>
             </CardActions>
             <CardContent>
                 <Typography variant="h6" color="text.secondary" gutterBottom>
-                    {quatity}
+                    {quantity}
                 </Typography>
             </CardContent>
             <CardActions>
@@ -36,17 +38,54 @@ const ProductCounter = props => {
                     sx={{backgroundColor: "#F15025"}}
                     variant="contained"
                     size="body1"
-                    onClick={() => ((quatity<=1) ? console.log("No se puede asignar cantidades menores a 1") : setQuatity(quatity-1))}>
+                    onClick={() => substractQuantity()}>
                     MENOS
                 </Button>
             </CardActions>
             <CardActions>
-                <Button sx={{backgroundColor: "#F15025"}} variant="contained" size="body1" onClick={() => (setQuatity(0))}>PRODUCTOS A CERO</Button>
+                <Button sx={{backgroundColor: "#F15025"}} variant="contained" size="body1" onClick={() => resetQuantity()}>PRODUCTOS A CERO</Button>
             </CardActions>
             </Grid>
             <Grid item container sx={{justifyContent:"center"}}>
             <CardActions>
-                <Button sx={{backgroundColor: "#F15025"}} variant="contained" size="body1">AGREGAR AL CARRITO</Button>
+                {(quantity == 0) ? (
+                <Button 
+                    disabled
+                    sx={{backgroundColor: "#F15025"}}
+                    variant="contained"
+                    size="body1"
+                    >AGREGAR AL CARRITO</Button>) : (
+                <Button
+                    sx={{backgroundColor: "#F15025"}}
+                    variant="contained"
+                    size="body1"
+                    onClick={() => addItemToCart(item, quantity) }
+                    >AGREGAR AL CARRITO</Button>)}
+            </CardActions>
+            <Link style={{textDecoration: 'none'}} to="/catalog">
+                <CardActions>
+                    <Button
+                        sx={{backgroundColor: "#F15025"}}
+                        variant="contained"
+                        size="body1"
+                    >SEGUIR COMPRANDO</Button>
+                </CardActions>
+            </Link>
+            <CardActions>
+                {(!itemsInCart) ? (
+                <Button 
+                    disabled
+                    sx={{backgroundColor: "#F15025"}}
+                    variant="contained"
+                    size="body1"
+                    >FINALIZAR COMPRA</Button>) : (
+                <Link style={{textDecoration: 'none'}} to="/cart">   
+                <Button
+                    sx={{backgroundColor: "#F15025"}}
+                    variant="contained"
+                    size="body1"
+                    >FINALIZAR COMPRA</Button>
+                </Link> )}
             </CardActions>
             </Grid>
             </Grid>

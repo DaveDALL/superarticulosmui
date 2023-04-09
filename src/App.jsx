@@ -8,12 +8,13 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from './components/Cart'
 import Error from './components/Error'
-
+import CartContextProvider from './context/CartContextProvider'
 
 function App() {
 
   return (
     <>
+    <CartContextProvider>
     <BrowserRouter>
       <Grid container direction="column">
         <Grid item container>
@@ -25,11 +26,12 @@ function App() {
             <Route exact path="/category/:categoryid" element={<ItemListContainer />} />
             <Route exact path="/productdetail/:id" element={<ItemDetailContainer />} />
             <Route exact path="/cart" element={<Cart />} />
-            <Route exact path="*" element={<Error />} />
-           </Routes>
-        
+            <Route path="*" element={<Error />} />
+          </Routes>
       </Grid>
       </BrowserRouter>
+      </CartContextProvider>
+      
     </>
   )
 }

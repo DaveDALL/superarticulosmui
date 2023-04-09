@@ -1,3 +1,42 @@
 body {
     background-color:#E5FCFF;
+    overflow-x: hidden;
+}
+
+form {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    display:grid;
+}
+
+form > button {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    
+    padding: 8px;
+}
+
+form > button:enabled {
+    background-color: #F15025;
+    color: white;
+
+}
+
+form > button:enabled:hover {
+    background-color: #3f50b5;
+    cursor: pointer;
+}
+
+label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+input {
+    font-size: 90%;
+}
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+  }
+input:valid {
+    box-shadow: 0 0 5px 1px limegreen;
 }

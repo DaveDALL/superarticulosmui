@@ -6,42 +6,45 @@ import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 import ProductCounter from './ProductCounter'
 
-const CardProductDetailRender = props => {
-    console.log(props.product.name)
+const CardProductDetailRender = ({ product }) => {
+
+    const {id, name, brand, imageurl, longdescription, price, stock} = product
+
   return (
-    <Card sx={{ maxWidth:700, maxHeight:900 }} key={props.product.id}>
+    <Card sx={{ maxWidth:700, maxHeight:900 }} key={id}>
         <CardActionArea>
             <CardMedia
                 component="img"
                 height="300"
-                image={props.product.imageurl}
-                alt={props.product.name}
+                image={imageurl}
+                alt={name}
                 sx={{objectFit: "contain", p: 1}}
             />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
-                    {props.product.name}
+                    {name}
                 </Typography>
                 <Typography gutterBottom variant="h6" component="div">
-                    {props.product.brand}
+                    {brand}
                 </Typography>
                 <Typography gutterBottom variant="h6" component="div">
-                    $ {props.product.price}
+                    $ {Number(price).toFixed(2)}
                 </Typography>
                 <Typography gutterBottom variant="h6" component="div" sx={{color:"red"}}>
-                    CONTAMOS CON STOCK DE {props.product.stock} PIEZAS <br/> ¡¡ COMPRA YA, QUE SE ACABAN !!
+                    CONTAMOS CON STOCK DE {stock} PIEZAS <br/> ¡¡ COMPRA YA, QUE SE ACABAN !!
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
-                    {props.product.longdescription}
+                    {longdescription}
                 </Typography>
             </CardContent>
         </CardActionArea>
         <CardContent>
             <ProductCounter 
-                id={props.product.id}
-                name={props.product.name}
-                price={props.product.proce}
-                stock={props.product.stock}
+                id={id}
+                name={name}
+                imageurl={imageurl}
+                price={price}
+                stock={stock}
             />
         </CardContent>
   </Card>

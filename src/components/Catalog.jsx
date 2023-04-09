@@ -6,7 +6,7 @@ const Catalog = ({products}) => {
 
     const productRendering = product => {
         return (
-          <Grid item container xs={12} md={6} lg={3} p={1} sx={{justifyContent: "center"}}>
+          <Grid item container xs={12} md={6} lg={4} p={1} sx={{justifyContent: "center"}}>
             <CardRendering product={product}/>
           </Grid>
         )}
