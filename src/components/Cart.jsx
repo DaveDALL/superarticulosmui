@@ -6,10 +6,12 @@ import { useContext } from 'react'
 import { CartContext } from '../context/CartContextProvider'
 import CardItemsCartRedering from './CardItemsCartRedering'
 import CustomerForm from './CustomerForm'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Cart = () => {
 
-  const {cart, calculateItemsInCart} = useContext(CartContext)
+  const {cart, calculateItemsInCart, alertMessage, setAlertMessage} = useContext(CartContext)
   const itemsInCart = calculateItemsInCart()
 
   const ItemCartRendering = cartItem => {
@@ -20,8 +22,35 @@ const Cart = () => {
     )
   }
 
+  const alertNotification = () => {
+    if(alertMessage.value === "true") {
+      switch(alertMessage.type) {
+        case "error" :
+          toast.error(alertMessage.msg, {
+            position: toast.POSITION.BOTTOM_CENTER
+          })
+        break
+        case "success" :
+          toast.success(alertMessage.msg, {
+            position: toast.POSITION.BOTTOM_CENTER
+          })
+        break
+        case "warning" :
+          toast.warn(alertMessage.msg, {
+            position: toast.POSITION.TOP_CENTER
+          })
+        break
+      }
+    }
+    setTimeout(() => {
+      setAlertMessage([])
+    }, 300)
+  }
+
   return (
     <Grid container direction='column'>
+        {alertNotification()}
+        <ToastContainer />
         <Grid item xs={0} md={2}/>
         <Grid item container xs={12} md={8} mt={4} sx={{justifyContent:'center'}}>
             <Typography variant="h4" sx={{color:'#F15025'}}> 
