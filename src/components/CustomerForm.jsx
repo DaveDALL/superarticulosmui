@@ -17,7 +17,7 @@ const CustomerForm = () => {
     const [mailValidation, setMailValidation] = useState(null)
     const [otherDataValidation, setOtherDataValidation] = useState(null)
     const [orderedItems, setOrderedItems] = useState([])
-    const {cart, setCart, calculateCartTotal, clearFullCart} = useContext(CartContext)
+    const {cart, calculateCartTotal, clearFullCart} = useContext(CartContext)
     const totalCartItems = calculateCartTotal()
 
     useEffect(() => {
@@ -123,7 +123,6 @@ const CustomerForm = () => {
                 onChange={(e) => setCustomerValEmail(e.target.value)}
                 required
               />
-              {console.log(mailValidation, customerValEmail)}
               {!mailValidation ? <p>Valide correctamente su email</p> : <p>Email validado</p>}
               {!otherDataValidation ? <p>Introduzca corectamente sus datos</p> : <p></p>}
               {(mailValidation && otherDataValidation) ? (

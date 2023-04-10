@@ -59,7 +59,7 @@ const ProductCounter = ({id, name, imageurl, price, stock}) => {
                     sx={{backgroundColor: "#F15025"}}
                     variant="contained"
                     size="body1"
-                    onClick={() => addItemToCart(item, quantity) }
+                    onClick={() => addItemToCart(item, quantity)}
                     >AGREGAR AL CARRITO</Button>)}
             </CardActions>
             <Link style={{textDecoration: 'none'}} to="/catalog">

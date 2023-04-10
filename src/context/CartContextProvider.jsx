@@ -1,5 +1,7 @@
 import React from 'react'
 import { createContext, useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const CartContext = createContext(null)
 
@@ -30,16 +32,22 @@ const CartContextProvider = ({ children }) => {
         if (itemisIncart) {
             cartItems.map(cartItem => {
                 if(cartItem.id === id) {
-                    ((cartItem.quantity + quantity)>=stock) ? console.log("No hay existencias") : setQuantity(quantity+1)
+                    ((cartItem.quantity + quantity)>=stock) ?
+                    alert("NO CONTAMOS CON EXISTENCIAS") :
+                    setQuantity(quantity + 1)
                 }
             })
         } else {
-            (quantity >= stock) ? console.log("No hay existencias") : setQuantity(quantity + 1)
+            (quantity >= stock) ?
+            alert("NO CONTAMOS CON EXISTENCIAS") :
+            setQuantity(quantity + 1)
         } 
     }
 
     const substractQuantity = () => {
-        (quantity <= 1) ? console.log("No se puede asignar cantidades menores a 1") : setQuantity(quantity - 1)
+        (quantity <= 1) ?
+        alert("NO SE PUEDEN ASIGNAR CANTIDADES MENORES A 1") :
+        setQuantity(quantity - 1)
     }
 
     const resetQuantity= () => {

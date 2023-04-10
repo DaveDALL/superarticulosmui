@@ -24,8 +24,7 @@ const ItemDetailContainer = () => {
       }, [])
 
       const idFilter = products.filter(product => product.id == id)
-      console.log(idFilter)
-
+      
   return (
     <>
         <Grid container direction="column">
