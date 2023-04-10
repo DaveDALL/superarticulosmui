@@ -1,4 +1,6 @@
 import React from 'react'
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 import { createContext, useState, useEffect } from 'react'
 
 export const CartContext = createContext(null)
@@ -44,7 +46,7 @@ const CartContextProvider = ({ children }) => {
 
     const substractQuantity = () => {
         (quantity <= 1) ?
-        alert("NO SE PUEDEN ASIGNAR CANTIDADES MENORES A 1") :
+        alert("NO ES POSIBLE ASIGNAR CANTIDADES MENORES A 1") :
         setQuantity(quantity - 1)
     }
 
