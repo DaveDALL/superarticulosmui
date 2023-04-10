@@ -123,8 +123,8 @@ const CustomerForm = () => {
                 onChange={(e) => setCustomerValEmail(e.target.value)}
                 required
               />
-              {!mailValidation ? <p>Valide correctamente su email</p> : <p>Email validado</p>}
-              {!otherDataValidation ? <p>Introduzca corectamente sus datos</p> : <p></p>}
+              {!mailValidation ? <p className='message'>Valide correctamente su email</p> : <p className='message'>Email validado</p>}
+              {!otherDataValidation ? <p className='message'>Introduzca correctamente sus datos</p> : <p></p>}
               {(mailValidation && otherDataValidation) ? (
                 <button type="submit">COMPRAR PRODUCTOS</button>
               ) : (
@@ -142,10 +142,11 @@ const CustomerForm = () => {
               variant='contained'
               size='large'
               sx={{alignSelf:'center', backgroundColor: "#F15025"}}
+              fullWidth={false}
               onClick={() => clearFullCart()}
             >DE ACUERDO</Button>
           ) : (
-            <Button variant='contained' size='large' disabled sx={{alignSelf:'center'}}>DE ACUERDO</Button>)}  
+            <Button variant='contained' size='large' disabled sx={{alignSelf:'center', display:'none'}}>DE ACUERDO</Button>)}  
         </Grid>
         <Grid item sm={0} md={2} />
     </>
