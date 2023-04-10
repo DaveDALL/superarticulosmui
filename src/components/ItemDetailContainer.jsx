@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import ProductDetail from './ProductDetail'
 import Loader from './loader'
+import Error from './Error'
 
 const ItemDetailContainer = () => {
 
@@ -22,7 +23,8 @@ const ItemDetailContainer = () => {
         })
       }, [])
 
-    const idFilter = products.filter(product => product.id == id)
+      const idFilter = products.filter(product => product.id == id)
+      console.log(idFilter)
 
   return (
     <>
@@ -30,7 +32,12 @@ const ItemDetailContainer = () => {
             <Grid container>
                 <Grid item sm={0} md={2}/>
                 <Grid item sm={12} md={8}>
-                    {loading ? <Loader /> : (id ? <ProductDetail products={idFilter} /> : <ProductDetail products={products} />)}
+                    {loading ? 
+                    <Loader /> : (
+                    (id && idFilter.length > 0) ? 
+                    <ProductDetail products={idFilter} /> :
+                    <Error />
+                    )}
                 </Grid>
                 <Grid item sm={0} md={2}/>
             </Grid>
