@@ -67,17 +67,17 @@ Funcionamiento con la integracion del carrito y de la orden de compra:
 
     * Uso de Parametros: A través de la integración anterior de react route dom, se agrega la característica de usePArams(), y mediante esta funcionabilidad, se hace el envío de ID y CATEGORYID hacia los componentes de ProductDetail y Catalog respectivamente y establecer los parametros de filtrado.
 
-    En la tercera etapa y última, se realiza la intergración de los siguientes componentes que daran la posibilidad de intregrar el carrito de compra, introducción de datos de compradory generación d orden de compra:
+    En la tercera etapa y última, se realiza la intergración de los siguientes componentes que daran la posibilidad de intregrar el carrito de compra, introducción de datos del comprador y generación de orden de compra:
 
     3. Componentes:
     
-    * CartContextProvider: Alojado en la carpeta de context bajo components, para agregar contexto, donde realizan procesos lógicos, se podrá enviar variables y funciones que otros componentes no relacionados podran usar.
+    * CartContextProvider: Alojado en la carpeta de context bajo la carpeta de src, para agregar contexto, donde realizan procesos lógicos, se podrá enviar variables y funciones que otros componentes no relacionados podran usar.
 
     * Cart: Donde se despliegan los productos agregados al carrito, atraves del componente CardItemsCartendering, y se intregra el formulario de datos del comprador, e proporcional orden de compra al finalizar la transaccion.
 
     * CarItemsCartRendring: A traves de este componente de realiza el render de las tarjetas de productos del carrito, donde se muestra una imagen del producto, el nombre, el precio, la cantidad adquirida y el subtotal de caa producto; asi mismo se adiciona un boton para poder eliminar productos que no se desean.
 
-    * CustomerForm: Formulario donde se llenan los datos del cliente: nombre, apellido, teléfono, email; con validación de correo electrónico, mediante un campo donde se solicita volver a escribir el correo y realizando la verificación. En este componente se integra un botón para realizar la compra una vez que todos los campos esten llenos, de lo contrario no se activará el botón de compra. Se integra la recepción de la orden de compra y el formateo de objeto order que representa el registro de compra con la información del comprador (nombre, apellido, telófono y email), datos del los productos comprados (id, nombre, precio, cantidad u subtotal), el total de la compra y el time stamp del servidor n la fecha y hora de la transacción
+    * CustomerForm: Formulario donde se llenan los datos del cliente: nombre, apellido, teléfono, email; con validación de correo electrónico, mediante un campo donde se solicita volver a escribir el correo y realizando la verificación. En este componente se integra un botón para realizar la compra una vez que todos los campos esten llenos, de lo contrario no se activará el botón de compra. Se integra la recepción de la orden de compra y el formateo de objeto order que representa el registro de compra con la información del comprador (nombre, apellido, telófono y email), datos del los productos comprados (id, nombre, precio, cantidad u subtotal), el total de la compra y el time stamp del servidor con la fecha y hora de la transacción
 
     * Loader: Se integra un loader con renderizado condicional, en los componentes de Home, ItemListContainer e ItemDetailContainer
 
@@ -119,10 +119,10 @@ Funcionamiento con la integracion del carrito y de la orden de compra:
 
 ### Seguimeinto de Proyecto
 
-    * Integración del un sistema de control de invetario para cerrar el ciclo de compra, y poder agregar mas procucto, y hacer validadciones de cambios de precios
+    * Integración de un sistema de control de invetario para cerrar el ciclo de compra, a través de sistema de control de invetario se podra agregar mas procucto, y hacer validadciones de cambios de precios
 
     * Integración de Autenticación e inicio de sesión de usuario registrado, registro de usuario nuevo, validación de datos como correo electronico y número teléfonico, a través de el envio de un correo de validación y un SMS para validar el teléfono.
 
-    * Inetgración de un sistema de pagos.
+    * Integración de un sistema de pagos.
 
 ### Fin
